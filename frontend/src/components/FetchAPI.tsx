@@ -54,7 +54,7 @@ const FetchAPI: React.FC = () => {
           placeholder="Enter category"
         />
       </div>
-      <div>
+      {/* <div>
         <label htmlFor="limit">Limit:</label>
         <input
           type="number"
@@ -63,7 +63,7 @@ const FetchAPI: React.FC = () => {
           onChange={(e) => setLimit(e.target.value)}
           placeholder="Enter limit"
         />
-      </div>
+      </div> */}
       <button onClick={fetchPublicAPIs}>Fetch APIs</button>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <ul>
