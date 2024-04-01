@@ -4,7 +4,7 @@ import axios from "axios";
 
 const FetchAPI: React.FC = () => {
   const [category, setCategory] = useState("");
-  const [limit, setLimit] = useState("");
+  // const [limit, setLimit] = useState("");
   const [apiList, setApiList] = useState([]);
   const [error, setError] = useState("");
 
@@ -15,9 +15,9 @@ const FetchAPI: React.FC = () => {
       if (category) {
         params.push(`category=${encodeURIComponent(category)}`);
       }
-      if (limit) {
-        params.push(`limit=${encodeURIComponent(limit)}`);
-      }
+      // if (limit) {
+      //   params.push(`limit=${encodeURIComponent(limit)}`);
+      // }
       if (params.length > 0) {
         apiUrl += `?${params.join("&")}`;
       }
