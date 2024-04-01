@@ -33,5 +33,7 @@ export function detokenizeAdmin(
         "JWT_SECRET environment variable is not set. Unable to sign JWT."
       );
     }
+  } else {
+    res.status(403).send("INvalid Token");
   }
 }

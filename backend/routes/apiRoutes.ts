@@ -48,6 +48,33 @@
  *                       Cors:
  *                         type: string
  *                         description: Cross-Origin Resource Sharing (CORS) support
+ *
+ * /api/balance/{address}:
+ *   get:
+ *     summary: Fetch the balance of an Ethereum account.
+ *     description: Retrieves the balance of the specified Ethereum account.
+ *     parameters:
+ *       - in: path
+ *         name: address
+ *         description: Ethereum address to fetch the balance for.
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Successful response with the balance of the Ethereum account.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 balance:
+ *                   type: string
+ *                   description: The balance of the Ethereum account in ether.
+ *       '400':
+ *         description: Bad request due to an invalid Ethereum address.
+ *       '500':
+ *         description: Internal server error.
  */
 import express, { Router, Response } from "express";
 import { detokenizeAdmin } from "../middleware/index";
